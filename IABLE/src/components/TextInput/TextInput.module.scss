@@ -1,0 +1,85 @@
+@import "../../styles/abstract/mixins";
+
+.text-input {
+  position: relative;
+  border-top: 1px solid transparent;
+  padding-top: 1rem;
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+.label {
+  font-size: 1.7rem;
+  color: #8597a3;
+  position: absolute;
+  top: 0;
+  transform: translateY(75%);
+  pointer-events: none;
+  transition: all 0.25s ease;
+
+  @include respond(xs) {
+    font-size: 1.4rem;
+  }
+}
+
+.input {
+  width: 100%;
+  background-color: var(--color-white);
+  border: none;
+  font-family: inherit;
+  border-bottom: 2px solid #e8e8e8;
+  display: block;
+  color: var(--dark);
+  font-size: 1.7rem;
+  padding: 0.75rem 0;
+  line-height: 1.5;
+  transition: all 0.25s ease;
+
+  @include respond(xs) {
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
+  }
+
+  &::placeholder {
+    font-family: inherit;
+    color: var(--gray);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--active {
+    border-bottom-color: var(--color-blue-3);
+
+    & + .label {
+      transform: translateY(-0.3rem);
+      font-size: 1.5rem;
+
+      @include respond(xs) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &--not-valid {
+    border-bottom-color: var(--color-red);
+  }
+}
+
+.errors {
+  margin-top: 0.4rem;
+  min-height: 2.1rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-red);
+  text-transform: capitalize;
+
+  @include respond(xs) {
+    font-size: 1.1rem;
+  }
+}

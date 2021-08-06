@@ -1,0 +1,64 @@
+@import "../../styles/abstract/mixins";
+@import "../../styles/abstract/variables";
+
+.layout {
+  display: grid;
+  grid-template-columns: 28rem 1fr;
+  min-height: 100vh;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.side-menu-overlay {
+  display: none;
+
+  @include respond(sm) {
+    display: block;
+  }
+}
+
+.main {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-primary);
+
+  @include respond(sm) {
+    grid-column: 1 / span 1;
+    background: linear-gradient(
+      168.79deg,
+      rgba(0, 56, 255, 0.1) 0%,
+      rgba(223, 224, 242, 0.42) 100.96%
+    );
+  }
+
+  &--searching {
+    @include respond(sm) {
+      background: linear-gradient(
+        168.79deg,
+        rgba(0, 56, 255, 0.29) 0%,
+        rgba(218, 220, 252, 0.86) 95.7%
+      );
+    }
+  }
+}
+
+.content-wrapper {
+  max-height: calc(100vh - 10rem);
+
+  @include respond(sm) {
+    max-height: calc(100vh - 15.5rem);
+  }
+}
+
+.content {
+  padding: 0 2rem 3rem 2rem;
+
+  @include respond(sm) {
+    padding: 0 1.6rem;
+  }
+}

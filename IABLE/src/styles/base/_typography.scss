@@ -1,0 +1,47 @@
+@import "../abstract/mixins";
+
+// Poppins font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.main-title {
+  font-display: 2.4rem !important;
+  margin: 0;
+  margin-bottom: 1.7rem;
+  font-weight: 600;
+
+  @include respond(sm) {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.main-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+
+  @include respond(sm) {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.main-paragraph {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 1rem;
+
+  @include respond(sm) {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+
+.main-link {
+  text-decoration: underline;
+  color: var(--color-blue-3);
+  font-weight: 400;
+  margin: 0 5px;
+}
